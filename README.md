@@ -18,5 +18,5 @@ cp .env.example .env
 ## Run
 
 ```bash
-python main.py
+python langfuse_eg/main.py
 ```
