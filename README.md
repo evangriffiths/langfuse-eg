@@ -2,6 +2,8 @@
 
 An example for demo-ing langfuse
 
+See https://github.com/evangriffiths/langfuse-eg/commit/19b13d7ade19e02c0aefc25b7a88c61e0dbd8269 for the diff to add langfuse tracing to main.py
+
 ## Setup
 
 ```bash
