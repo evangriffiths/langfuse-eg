@@ -20,3 +20,5 @@ cp .env.example .env
 ```bash
 python langfuse_eg/main.py
 ```
+
+Now see the new trace in https://cloud.langfuse.com/ -> Tracing -> Traces

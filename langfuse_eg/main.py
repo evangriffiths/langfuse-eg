@@ -1,10 +1,18 @@
 import os
 
 from dotenv import load_dotenv
-from openai import OpenAI
+from langfuse import Langfuse
+from langfuse.decorators import observe
+from langfuse.openai import OpenAI
 from pydantic import BaseModel, Field
 
 load_dotenv()
+
+langfuse = Langfuse(
+    public_key=os.getenv("LANGFUSE_PUBLIC_KEY"),
+    secret_key=os.getenv("LANGFUSE_SECRET_KEY"),
+    host=os.getenv("LANGFUSE_HOST"),
+)
 
 
 class CompanyProject(BaseModel):
@@ -38,6 +46,7 @@ Here is the grant:
 """
 
 
+@observe()
 def get_project_grant_match(Grant: str, CompanyProject: str) -> GrantMatch:
     """
     Rates the match between a grant and a project
